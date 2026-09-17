@@ -135,8 +135,10 @@ generic icon and prints a note.
 `original/` and the game file names, `src/gen/` (C translated from
 `historik.exe`), `analysis/` (disassembly), `build/` (translated objects,
 intro captures, the traced icon), PPM and PCM dumps and crash reports.
-`docs/screenshots/` is committed on purpose: one gameplay screenshot and a
-preview of the icon, used by the README to show the port. Before a release, check with a scratch clone that
+`docs/screenshots/` is committed on purpose: a screenshot of the game window
+on the Haiku desktop (tab and border included) and a preview of the icon,
+used by the README. The screenshot was taken on an empty workspace of the
+Haiku machine so no other windows or desktop icons are in the picture. Before a release, check with a scratch clone that
 `git ls-files` shows only the port, and that no tracked file contains
 strings or 32-byte runs of the game data. `tools/translate.py` warns when
 `historik.exe` is not the release this port was made for (sha256 in

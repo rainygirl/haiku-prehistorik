@@ -81,8 +81,9 @@ translate:
 	python3 tools/translate.py "$(GAME)/historik.exe" src/gen
 
 # Installs into ~/config/non-packaged/apps/Prehistorik with Deskbar and
-# Desktop links. The game files are copied next to the application; an
-# existing grawaga.cfg (your settings) is kept.
+# Desktop links and a `prehistorik` command in ~/config/non-packaged/bin.
+# The game files are copied next to the application; an existing
+# grawaga.cfg (your settings) is kept.
 APPDIR ?= /boot/home/config/non-packaged/apps/Prehistorik
 GAME_FILES = historik.exe filesa.cur filesa.vga filesb.cur filesb.vga
 install: all
@@ -99,12 +100,13 @@ install: all
 	mkdir -p /boot/home/config/settings/deskbar/menu/Applications
 	@# Keep links that already point here: replacing one makes Tracker drop
 	@# the Desktop icon until it restarts.
-	@for l in /boot/home/config/settings/deskbar/menu/Applications/Prehistorik /boot/home/Desktop/Prehistorik; do \
+	mkdir -p /boot/home/config/non-packaged/bin
+	@for l in /boot/home/config/settings/deskbar/menu/Applications/Prehistorik /boot/home/Desktop/Prehistorik /boot/home/config/non-packaged/bin/prehistorik; do \
 		[ "$$(readlink "$$l")" = "$(APPDIR)/Prehistorik" ] || ln -sf "$(APPDIR)/Prehistorik" "$$l"; \
 	done
 	rm -f /boot/home/config/settings/mime_db/application/x-vnd.rainygirl-prehistorik
 	"$(APPDIR)/Prehistorik" --register
-	@echo "Installed to $(APPDIR)."
+	@echo "Installed to $(APPDIR). Start it from the Deskbar, the Desktop, or by typing: prehistorik"
 	@echo "If the Desktop icon is missing or generic, restart Tracker: hey Tracker quit; /boot/system/Tracker &"
 
 clean:

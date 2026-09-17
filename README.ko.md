@@ -1,4 +1,4 @@
-# Prehistorik for Haiku
+# <img src="docs/screenshots/icon.png" width="48" alt=""> Prehistorik for Haiku
 
 [English](README.md)
 
@@ -62,7 +62,8 @@ setarch x86 make install GAME=/path/to/prehistorik
 ```
 
 애플리케이션과 게임 파일을 `/boot/home/config/non-packaged/apps/Prehistorik`에
-복사하고, Deskbar의 Applications 메뉴와 데스크톱에 Prehistorik을 추가합니다.
+복사하고, Deskbar의 Applications 메뉴와 데스크톱에 Prehistorik을 추가하며,
+`prehistorik` 명령을 설치합니다.
 
 데스크톱에 Prehistorik 아이콘이 보이지 않거나 일반 파일 아이콘으로 보이면 Tracker가
 예전 화면을 캐시하고 있는 것입니다. Tracker를 재시작하세요. Tracker 자신의 창만 닫힙니다.
@@ -73,14 +74,11 @@ hey Tracker quit; /boot/system/Tracker &
 
 ## 실행
 
-Deskbar나 데스크톱에서 Prehistorik을 실행합니다. 빌드 결과를 바로 실행할 수도
-있습니다.
+Deskbar나 데스크톱에서 Prehistorik을 실행하거나, 터미널에서 다음과 같이 입력합니다.
 
 ```sh
-build/Prehistorik /path/to/prehistorik/historik.exe
+prehistorik
 ```
-
-인자 없이 실행하면 애플리케이션과 같은 폴더에서 `historik.exe`를 찾습니다.
 
 | 키 | 동작 |
 | --- | --- |
@@ -95,7 +93,7 @@ Sound Blaster, 키보드를 선택해 두어 바로 인트로가 시작됩니다
 사운드 장치, 조작 장치를 바꾸려면 터미널에서 원본 설정 화면으로 실행합니다.
 
 ```sh
-/boot/home/config/non-packaged/apps/Prehistorik/Prehistorik --setup
+prehistorik --setup
 ```
 
 ## 라이선스

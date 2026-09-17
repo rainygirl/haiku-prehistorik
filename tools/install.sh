@@ -28,7 +28,8 @@ addattr -t string SYS:NAME Prehistorik \$APP/Prehistorik
 mkdir -p /boot/home/config/settings/deskbar/menu/Applications
 # Keep links that already point here: replacing one makes Tracker drop the
 # Desktop icon until it restarts.
-for l in /boot/home/config/settings/deskbar/menu/Applications/Prehistorik /boot/home/Desktop/Prehistorik; do
+mkdir -p /boot/home/config/non-packaged/bin
+for l in /boot/home/config/settings/deskbar/menu/Applications/Prehistorik /boot/home/Desktop/Prehistorik /boot/home/config/non-packaged/bin/prehistorik; do
 	[ \"\$(readlink \"\$l\")\" = \"\$APP/Prehistorik\" ] || ln -sf \$APP/Prehistorik \"\$l\"
 done
 # The icon Tracker shows for the application comes from the MIME database

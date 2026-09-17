@@ -6,6 +6,7 @@
 #include <Bitmap.h>
 #include <Invoker.h>
 #include <Entry.h>
+#include <FindDirectory.h>
 #include <Path.h>
 #include <Roster.h>
 #include <View.h>
@@ -193,10 +194,20 @@ public:
 	bool Prepare(std::string& error)
 	{
 		if (fExe.empty()) {
-			app_info info; GetAppInfo(&info); BPath p(&info.ref); p.GetParent(&p);
-			const char* candidates[] = { "historik.exe", "original/historik.exe", "data/historik.exe", "HISTORIK.EXE" };
-			for (size_t i = 0; i < 4; ++i) { BPath c(p.Path(), candidates[i]); struct stat st; if (stat(c.Path(), &st) == 0) { fExe = c.Path(); break; } }
-			if (fExe.empty()) { error = "historik.exe not found next to the application (or in original/). Pass its path as the first argument."; return false; }
+			// Look next to the real executable (following the `prehistorik`
+			// command link in ~/config/non-packaged/bin), then in the default
+			// install folder, so the game starts without any argument.
+			app_info info; GetAppInfo(&info);
+			BEntry self(&info.ref, true);
+			BPath appDir; self.GetPath(&appDir); appDir.GetParent(&appDir);
+			std::vector<std::string> dirs;
+			dirs.push_back(appDir.Path());
+			BPath installed;
+			if (find_directory(B_USER_NONPACKAGED_DIRECTORY, &installed) == B_OK) { installed.Append("apps/Prehistorik"); dirs.push_back(installed.Path()); }
+			const char* candidates[] = { "historik.exe", "HISTORIK.EXE", "original/historik.exe" };
+			for (size_t d = 0; d < dirs.size() && fExe.empty(); ++d)
+				for (size_t i = 0; i < 3; ++i) { BPath c(dirs[d].c_str(), candidates[i]); struct stat st; if (stat(c.Path(), &st) == 0) { fExe = c.Path(); break; } }
+			if (fExe.empty()) { error = "historik.exe was not found next to the application or in ~/config/non-packaged/apps/Prehistorik. Install the game files there, or pass the path to historik.exe as an argument."; return false; }
 		}
 		g.exePath = fExe;
 		size_t s = fExe.find_last_of('/'); g.gameDir = s == std::string::npos ? "." : fExe.substr(0, s);

@@ -1,4 +1,4 @@
-# Prehistorik for Haiku
+# <img src="docs/screenshots/icon.png" width="48" alt=""> Prehistorik for Haiku
 
 [한국어](README.ko.md)
 
@@ -65,8 +65,9 @@ setarch x86 make install GAME=/path/to/prehistorik
 ```
 
 This copies the application and the game files to
-`/boot/home/config/non-packaged/apps/Prehistorik`, and adds Prehistorik to
-the Deskbar's Applications menu and to the Desktop.
+`/boot/home/config/non-packaged/apps/Prehistorik`, adds Prehistorik to the
+Deskbar's Applications menu and to the Desktop, and installs the
+`prehistorik` command.
 
 If the Prehistorik icon is missing from the Desktop or looks generic,
 Tracker is showing a cached view. Restart Tracker, which only closes Tracker's own windows:
@@ -77,15 +78,11 @@ hey Tracker quit; /boot/system/Tracker &
 
 ## Running
 
-Start Prehistorik from the Deskbar or the Desktop. You can also run the
-build directly:
+Start Prehistorik from the Deskbar or the Desktop, or type this in Terminal:
 
 ```sh
-build/Prehistorik /path/to/prehistorik/historik.exe
+prehistorik
 ```
-
-Without an argument the application looks for `historik.exe` in its own
-folder.
 
 | Key | Action |
 | --- | --- |
@@ -101,7 +98,7 @@ the intro. To choose another language, graphics mode, sound device or
 controller, run the game from Terminal with the original setup screens:
 
 ```sh
-/boot/home/config/non-packaged/apps/Prehistorik/Prehistorik --setup
+prehistorik --setup
 ```
 
 ## License

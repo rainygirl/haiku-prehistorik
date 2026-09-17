@@ -1,0 +1,41 @@
+Prehistorik for Haiku
+
+Copyright (c) 2026 Lee JunHaeng (rainygirl@gmail.com)
+
+Except for third-party components and the game itself, the original source
+code of this port is licensed under the MIT License below.
+
+Not covered by the MIT License:
+
+  * src/ymfm/ is Aaron Giles' ymfm and keeps its own BSD 3-Clause License
+    (see src/ymfm/LICENSE).
+  * The glyphs in src/font8x8.h come from Daniel Hepper's font8x8, which is
+    in the public domain.
+  * Prehistorik is copyright (c) 1991 Titus Software. No game files or game
+    code are part of this repository. Anything generated from your copy of
+    the game (src/gen/, the application icon, build output) remains subject
+    to Titus Software's rights. The images in docs/screenshots/ show the
+    game's artwork to illustrate the port and are not licensed under the MIT
+    License.
+
+See THIRD_PARTY_NOTICES.md for details.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

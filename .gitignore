@@ -1,0 +1,49 @@
+# This repository contains only the port. Everything below is either the
+# game itself (copyright Titus) or derived from it, and must never be
+# committed. Bring your own copy of the game.
+
+# --- The game ---------------------------------------------------------------
+# Game files, wherever they are copied for building or testing.
+original/
+game/
+*.exe
+*.EXE
+*.com
+*.COM
+*.sqz
+*.SQZ
+filesa.*
+filesb.*
+FILESA.*
+FILESB.*
+*.cur
+*.CUR
+*.vga
+*.VGA
+cheat.doc
+help-u.txt
+grawaga.xxx
+replayers.txt
+# the game's own settings file (resources/grawaga.cfg is ours and is kept)
+/grawaga.cfg
+
+# --- Derived from the game --------------------------------------------------
+# C code translated from historik.exe (tools/translate.py writes it).
+src/gen/
+# Disassembly and analysis output of historik.exe.
+analysis/
+# Build output: contains the translated game, captured intro frames and the
+# icon traced from the game's artwork.
+build/
+# Raw captures of the game (the curated README images in docs/screenshots/
+# are committed on purpose).
+*.ppm
+*.pcm
+*.report
+
+# --- Local tooling ----------------------------------------------------------
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/

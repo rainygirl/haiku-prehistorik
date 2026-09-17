@@ -1,0 +1,4 @@
+# Extra code entry points found at runtime (segment:offset, relocated load segment 0100)
+0100:014A   # init proc pointers at DS:87B0/87B2
+0100:0151   # exit proc pointer at DS:87B4
+1DBC:0008   # exit proc chain pointers at DS:870A/870E/8712

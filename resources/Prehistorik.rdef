@@ -1,0 +1,15 @@
+/* Application resources. The icon is not stored here: it is traced from
+   the game's intro screen at build time (see tools/make_icon.py). */
+resource app_signature "application/x-vnd.rainygirl-prehistorik";
+
+resource app_flags B_SINGLE_LAUNCH;
+
+resource app_version {
+	major  = 1,
+	middle = 0,
+	minor  = 0,
+	variety = B_APPV_FINAL,
+	internal = 0,
+	short_info = "Prehistorik",
+	long_info = "Prehistorik (Titus, 1991) running natively on Haiku"
+};
